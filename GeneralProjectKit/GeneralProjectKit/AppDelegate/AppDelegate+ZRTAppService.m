@@ -23,5 +23,12 @@
     [UMSocialWechatHandler setWXAppId:WetChatAppId appSecret:WetChatAppSecret url:@"http://xiaozhangkeji.szdtoo.com.cn"];
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
 }
-
+- (void)registerUmengConfigure
+{
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+    UMConfigInstance.appKey = UMConfigAppKey;
+    UMConfigInstance.channelId = UMConfigChannelId;
+    [MobClick startWithConfigure:UMConfigInstance];
+}
 @end

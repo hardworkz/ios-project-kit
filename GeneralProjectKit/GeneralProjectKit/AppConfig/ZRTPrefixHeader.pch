@@ -32,6 +32,7 @@
 #import <RBQFetchedResultsController/RBQFRC.h>//realm数据监听，数据库变化观察者
 #import "RLMObject+JSON.h"//JSON和对象转换 Realm专用
 #import "RLMObject+Copying.h"//Realm对象拷贝 Realm专用
+#import "UMMobClick/MobClick.h"//友盟统计
 //常用分类category
 #import "UIButton+Extension.h"
 #import "UIImage+Extension.h"

@@ -16,7 +16,10 @@
 /**
  *  Mob注册
  */
-
 - (void)registerMob;
+/**
+ *  友盟统计
+ */
+- (void)registerUmengConfigure;
 
 @end

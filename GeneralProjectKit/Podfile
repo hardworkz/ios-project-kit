@@ -5,7 +5,8 @@ target 'GeneralProjectKit' do
    pod 'MJRefresh', '~> 3.1.0'
    pod 'AFNetworking', '~> 3.1.0'
    pod 'SDWebImage', '~> 3.7.6'
-   pod 'Realm'
-   pod 'RBQFetchedResultsController'
-   pod 'IQKeyboardManager'
+   pod 'UMengAnalytics','~>4.2.4'#标准SDK，含IDFA
+   pod 'Realm', '~> 2.7.0'
+   pod 'RBQFetchedResultsController', '~> 5.0.2'
+   pod 'IQKeyboardManager', '~> 4.0.9'
 end
