@@ -1,0 +1,54 @@
+//
+//  ZRTPrefixHeader.pch
+//  GeneralProjectKit
+//
+//  Created by 泡果 on 2017/7/10.
+//  Copyright © 2017年 ZRT. All rights reserved.
+//
+
+#ifndef ZRTPrefixHeader_pch
+#define ZRTPrefixHeader_pch
+//app代理分类
+#import "AppDelegate+ZRTAppService.h"
+#import "AppDelegate+ZRTAppLifeCircle.h"
+#import "AppDelegate+ZRTAppRootController.h"
+//配置文件
+#import "ZRTConfig.h"
+//基类控制器头文件
+#import "ZRTRootViewController.h"
+#import "ZRTRootNavigationController.h"
+#import "ZRTRootTabBarController.h"
+//第三方
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import <SMS_SDK/SMSSDK.h>
+//pod文件头文件
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
+#import "AFNetworking.h"
+#import <Realm/Realm.h>//Realm数据库
+#import <RBQFetchedResultsController/RBQFRC.h>//realm数据监听，数据库变化观察者
+#import "RLMObject+JSON.h"//JSON和对象转换 Realm专用
+#import "RLMObject+Copying.h"//Realm对象拷贝 Realm专用
+//常用分类category
+#import "UIButton+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIImage+scale.h"
+#import "UIView+Extension.h"
+#import "UIView+tap.h"
+#import "NSDate+Category.h"
+#import "UIViewController+AutoBack.h"
+#import "NSString+StringSize.h"
+//自定义类
+#import "HttpService.h"//网络请求工具类
+#import "InterfaceConfig.h"//自定义网络请求baseUrl
+#import "DataCache.h"//数据缓存
+#import "Identity.h"//应用标识
+#import "User.h"//用户模型
+#import "IdentityHttp.h"//登录请求类
+#import "IdentityManager.h"//应用标识管理类
+#import "UserHttp.h"//用户数据网络请求类
+#import "UserManager.h"//用户数据管理类
+#endif /* ZRTPrefixHeader_pch */
