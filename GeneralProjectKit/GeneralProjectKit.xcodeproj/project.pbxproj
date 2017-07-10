@@ -179,6 +179,9 @@
 		69AF4FC71F1377AD0097893F /* CustomPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF4FC41F1377AD0097893F /* CustomPageView.m */; };
 		69AF4FCD1F1378280097893F /* AutoImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF4FCA1F1378280097893F /* AutoImageTableViewCell.m */; };
 		69AF4FCE1F1378280097893F /* AutoImageViewHeightFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF4FCC1F1378280097893F /* AutoImageViewHeightFrameModel.m */; };
+		69AF4FDC1F13858F0097893F /* XWAlerLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF4FDB1F13858F0097893F /* XWAlerLoginView.m */; };
+		69AF4FE21F13872D0097893F /* UINavigationController+Cloudox.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF4FDF1F13872D0097893F /* UINavigationController+Cloudox.m */; };
+		69AF4FE31F13872D0097893F /* UIViewController+Cloudox.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF4FE11F13872D0097893F /* UIViewController+Cloudox.m */; };
 		9291A21FF9F57367B363F18B /* libPods-GeneralProjectKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8BBB433DC68615CB950070 /* libPods-GeneralProjectKit.a */; };
 /* End PBXBuildFile section */
 
@@ -625,6 +628,12 @@
 		69AF4FCA1F1378280097893F /* AutoImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoImageTableViewCell.m; sourceTree = "<group>"; };
 		69AF4FCB1F1378280097893F /* AutoImageViewHeightFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoImageViewHeightFrameModel.h; sourceTree = "<group>"; };
 		69AF4FCC1F1378280097893F /* AutoImageViewHeightFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoImageViewHeightFrameModel.m; sourceTree = "<group>"; };
+		69AF4FDA1F13858F0097893F /* XWAlerLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWAlerLoginView.h; sourceTree = "<group>"; };
+		69AF4FDB1F13858F0097893F /* XWAlerLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWAlerLoginView.m; sourceTree = "<group>"; };
+		69AF4FDE1F13872D0097893F /* UINavigationController+Cloudox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Cloudox.h"; sourceTree = "<group>"; };
+		69AF4FDF1F13872D0097893F /* UINavigationController+Cloudox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Cloudox.m"; sourceTree = "<group>"; };
+		69AF4FE01F13872D0097893F /* UIViewController+Cloudox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Cloudox.h"; sourceTree = "<group>"; };
+		69AF4FE11F13872D0097893F /* UIViewController+Cloudox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Cloudox.m"; sourceTree = "<group>"; };
 		69CCE761A896E5957FA75FA1 /* Pods-GeneralProjectKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralProjectKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralProjectKit/Pods-GeneralProjectKit.release.xcconfig"; sourceTree = "<group>"; };
 		81C7252F1D24016275ADE6AF /* Pods-GeneralProjectKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralProjectKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralProjectKit/Pods-GeneralProjectKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -773,6 +782,8 @@
 		69AF4C541F131F360097893F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				69AF4FDD1F13872D0097893F /* NavigationBarAlphaSet */,
+				69AF4FD91F13858F0097893F /* XWBottomAlertTip */,
 				69AF4FC81F1378280097893F /* AutoImageHeightCell */,
 				69AF4FBE1F1377AD0097893F /* ZRTHorizontalPagingView */,
 				69AF4F4D1F1371100097893F /* AliPay */,
@@ -1423,6 +1434,26 @@
 			path = AutoImageHeightCell;
 			sourceTree = "<group>";
 		};
+		69AF4FD91F13858F0097893F /* XWBottomAlertTip */ = {
+			isa = PBXGroup;
+			children = (
+				69AF4FDA1F13858F0097893F /* XWAlerLoginView.h */,
+				69AF4FDB1F13858F0097893F /* XWAlerLoginView.m */,
+			);
+			path = XWBottomAlertTip;
+			sourceTree = "<group>";
+		};
+		69AF4FDD1F13872D0097893F /* NavigationBarAlphaSet */ = {
+			isa = PBXGroup;
+			children = (
+				69AF4FDE1F13872D0097893F /* UINavigationController+Cloudox.h */,
+				69AF4FDF1F13872D0097893F /* UINavigationController+Cloudox.m */,
+				69AF4FE01F13872D0097893F /* UIViewController+Cloudox.h */,
+				69AF4FE11F13872D0097893F /* UIViewController+Cloudox.m */,
+			);
+			path = NavigationBarAlphaSet;
+			sourceTree = "<group>";
+		};
 		71698AF09A6508F4A0C47E3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1652,6 +1683,7 @@
 				69AF4EFD1F136BF80097893F /* NSString+RACSupport.m in Sources */,
 				69AF4F021F136BF90097893F /* RACBlockTrampoline.m in Sources */,
 				69AF4C6E1F132A760097893F /* AppDelegate+ZRTAppRootController.m in Sources */,
+				69AF4FDC1F13858F0097893F /* XWAlerLoginView.m in Sources */,
 				69AF4F0A1F136BF90097893F /* RACDynamicSequence.m in Sources */,
 				69AF4F031F136BF90097893F /* RACChannel.m in Sources */,
 				69AF4EF11F136BF80097893F /* NSInvocation+RACTypeParsing.m in Sources */,
@@ -1716,6 +1748,7 @@
 				69AF4F3D1F136BF90097893F /* UISegmentedControl+RACSignalSupport.m in Sources */,
 				69AF4F211F136BF90097893F /* RACSignal+Operations.m in Sources */,
 				69AF4F2F1F136BF90097893F /* RACUnarySequence.m in Sources */,
+				69AF4FE31F13872D0097893F /* UIViewController+Cloudox.m in Sources */,
 				69AF4F381F136BF90097893F /* UIControl+RACSignalSupportPrivate.m in Sources */,
 				69AF4FC61F1377AD0097893F /* CustomPageScrollView.m in Sources */,
 				69AF4F281F136BF90097893F /* RACSubscriber.m in Sources */,
@@ -1767,6 +1800,7 @@
 				69AF4EE81F136BF80097893F /* LICENSE.md in Sources */,
 				69AF4F421F136BF90097893F /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				69AF4F251F136BF90097893F /* RACStream.m in Sources */,
+				69AF4FE21F13872D0097893F /* UINavigationController+Cloudox.m in Sources */,
 				69AF4FB91F1371100097893F /* openssl_wrapper.m in Sources */,
 				69AF4F391F136BF90097893F /* UIDatePicker+RACSignalSupport.m in Sources */,
 				69AF4CCA1F13476F0097893F /* UIView+tap.m in Sources */,

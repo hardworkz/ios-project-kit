@@ -8,7 +8,7 @@
 
 #import "ZRTRootViewController.h"
 
-@interface ZRTRootViewController ()
+@interface ZRTRootViewController ()<UMSocialUIDelegate>
 
 @end
 
@@ -16,12 +16,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+}
+- (void)showTipsWithTitle:(NSString *)title
+{
+    XWAlerLoginView *alert = [[XWAlerLoginView alloc] initWithTitle:title];
+    [alert show];
+}
+#pragma mark - API
+- (void)shareUrl:(NSString *)url andTitle:(NSString *)title
+{
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = url;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = url;
+    
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = title;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+    
+    [UMSocialData defaultData].extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
+    [UMSocialData defaultData].extConfig.qqData.url = url;
+    [UMSocialData defaultData].extConfig.qqData.title = title;
+    
+    [UMSocialData defaultData].extConfig.qzoneData.url = url;
+    [UMSocialData defaultData].extConfig.qzoneData.title = title;
+    
+    [UMSocialData defaultData].extConfig.alipaySessionData.url = url;
+    [UMSocialData defaultData].extConfig.alipaySessionData.title = title;
+    
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:UmengAppKey shareText:title shareImage:[UIImage imageNamed:@"icon"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline, nil] delegate:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        NSLog(@"分享的平台: %@",[[response.data allKeys] objectAtIndex:0]);
+    }
 }
 
+- (void)goLogin
+{
+    ZRTRootViewController *login = [[ZRTRootViewController alloc]init];
+    [[AppDelegate rootNavigationController] pushViewController:login animated:YES];
+    
+}
 @end

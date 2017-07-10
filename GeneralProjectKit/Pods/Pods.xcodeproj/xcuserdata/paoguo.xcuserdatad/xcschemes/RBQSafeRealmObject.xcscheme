@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B6B8284C7EB58194F70D024DAD0436FF'
+               BlueprintIdentifier = '6825EA9C4B31DEA1E0D4D026648F01A9'
                BlueprintName = 'RBQSafeRealmObject'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libRBQSafeRealmObject.a'>

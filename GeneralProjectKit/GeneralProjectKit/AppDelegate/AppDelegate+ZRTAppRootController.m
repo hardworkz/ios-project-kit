@@ -9,6 +9,13 @@
 #import "AppDelegate+ZRTAppRootController.h"
 
 @implementation AppDelegate (ZRTAppRootController)
+- (void)setAppWindows
+{
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[UITabBarController alloc] init];
+    [self.window makeKeyAndVisible];
+}
 - (void)setRootViewController
 {
     //获取当前应用版本和上一个应用版本
@@ -26,14 +33,6 @@
         self.window.rootViewController = emptyView;
         [self createLoadingScrollView];
     }
-}
-
-- (void)setAppWindows
-{
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[UITabBarController alloc] init];
-    [self.window makeKeyAndVisible];
 }
 - (void)setTabbarController
 {
@@ -60,6 +59,9 @@
     self.window.rootViewController = navc;
 }
 #pragma mark - 引导页
+/**
+ *  首次启动轮播图
+ */
 - (void)createLoadingScrollView
 {//引导页
     UIScrollView *sc = [[UIScrollView alloc]initWithFrame:self.window.bounds];

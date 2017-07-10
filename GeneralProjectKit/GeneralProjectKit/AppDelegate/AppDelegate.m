@@ -14,6 +14,17 @@
 
 @implementation AppDelegate
 
++ (AppDelegate *)delegate
+{
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
++ (UINavigationController *)rootNavigationController
+{
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return (UINavigationController *)app.window.rootViewController;
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     

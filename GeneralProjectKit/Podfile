@@ -9,4 +9,5 @@ target 'GeneralProjectKit' do
    pod 'Realm', '~> 2.7.0'
    pod 'RBQFetchedResultsController', '~> 5.0.2'
    pod 'IQKeyboardManager', '~> 4.0.9'
+   pod 'FDFullscreenPopGesture', '~> 1.1'
 end

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BE58AA24BDE0DBB4F25138EC27214593'
-               BlueprintName = 'Realm'
+               BlueprintIdentifier = '2C71DE0FB8A6E5BB6EAF9FB037D799CC'
+               BlueprintName = 'FDFullscreenPopGesture'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libRealm.a'>
+               BuildableName = 'libFDFullscreenPopGesture.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
