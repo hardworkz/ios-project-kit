@@ -10,4 +10,14 @@ target 'GeneralProjectKit' do
    pod 'RBQFetchedResultsController', '~> 5.0.2'
    pod 'IQKeyboardManager', '~> 4.0.9'
    pod 'FDFullscreenPopGesture', '~> 1.1'
+   # U-Share SDK UI模块（分享面板，建议添加）
+   pod 'UMengUShare/UI'
+   # 集成微信(完整版14.4M)
+   pod 'UMengUShare/Social/WeChat'
+   # 集成QQ/QZone/TIM(精简版0.5M)
+   pod 'UMengUShare/Social/ReducedQQ'
+   # 集成新浪微博(精简版1M)
+   pod 'UMengUShare/Social/ReducedSina'
+   # 加入IDFA获取
+   pod 'UMengUShare/Plugin/IDFA'
 end

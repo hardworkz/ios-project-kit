@@ -34,6 +34,22 @@ PODS:
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
   - UMengAnalytics (4.2.4)
+  - UMengUShare/Core (6.4.3):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.3)
+  - UMengUShare/Plugin/IDFA (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedQQ (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.4.3):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI (6.4.3):
+    - UMengUShare/Core
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -45,6 +61,11 @@ DEPENDENCIES:
   - Realm (~> 2.7.0)
   - SDWebImage (~> 3.7.6)
   - UMengAnalytics (~> 4.2.4)
+  - UMengUShare/Plugin/IDFA
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedSina
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -58,7 +79,8 @@ SPEC CHECKSUMS:
   RealmUtilities: bd4d18141e62a6cdcfa1859f1f090a27ab282628
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
 
-PODFILE CHECKSUM: f0288b838b923a9f940b5e9895cf8a8a544b8818
+PODFILE CHECKSUM: e54dd25b9eb752cd0f82e565d0d72ea7a1d9344b
 
 COCOAPODS: 1.0.1

@@ -10,7 +10,7 @@
 
 @interface AppDelegate (ZRTAppService)
 /**
- *  友盟注册
+ *  友盟分享注册
  */
 - (void)registerUmeng;
 /**

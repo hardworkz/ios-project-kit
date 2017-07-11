@@ -8,6 +8,8 @@
 
 #ifndef ZRTConfig_h
 #define ZRTConfig_h
+//弱引用
+#define DefineWeakSelf __weak __typeof(self) weakSelf = self
 //屏幕宽高
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
@@ -31,7 +33,7 @@
 #define RANDOM_COLOR [UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1]
 //HEXCOLOR(0x00ffff)
 #define HEXCOLOR(c)                         [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0]
-
+//应用主色调
 #define Main_Color [UIColor colorWithRed:(3)/255.0 green:(160)/255.0 blue:(235)/255.0 alpha:1.0]
 
 // debug打印,发布不打印
@@ -40,6 +42,13 @@
 #else
 #define RTLog(...)
 #endif
+// < 调试时Log，发布的时不Log
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
 // 消息通知
 #define RegisterNotify(_name, _selector)                    \
 [[NSNotificationCenter defaultCenter] addObserver:self  \
@@ -62,9 +71,7 @@ selector:_selector name:_name object:nil];
 //通知和用户单例
 #define ZRT_NotificationCenter [NSNotificationCenter defaultCenter]
 #define ZRT_UserDefault [NSUserDefaults standardUserDefaults]
-/**
- 图片placeholder
- */
+//图片placeholder
 #define Default_Person_Image [UIImage imageNamed:@"default_parents"]
 #define Default_General_Image [UIImage imageNamed:@"default_general"]
 //第三方服务的key
@@ -73,6 +80,8 @@ selector:_selector name:_name object:nil];
 #define ShareQQAppKey @""//腾讯appKey
 #define WetChatAppId @""//微信appID
 #define WetChatAppSecret @""//微信appSecret
+#define WeiBoAppKey @""//微博appKey
+#define WeiBoAppSecret @""//微博appSecret
 #define SMSMobAppKey @""//MobAppKey
 #define SMSMobAppSecret @""
 #define SMSMobAppKeyTest @""//MobAppKey--测试使用

@@ -13,16 +13,22 @@
 #import "AppDelegate+ZRTAppLifeCircle.h"
 #import "AppDelegate+ZRTAppRootController.h"
 //配置文件
+#import "Const.h"
+#import "Macro.h"
 #import "ZRTConfig.h"
+#import "ZRTNotificationConfig.h"
 //基类控制器头文件
 #import "ZRTRootViewController.h"
 #import "ZRTRootNavigationController.h"
 #import "ZRTRootTabBarController.h"
+#import "ZRTRootLoginViewController.h"
 //第三方
-#import "UMSocial.h"
+#import <UMSocialCore/UMSocialCore.h>
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
 #import <SMS_SDK/SMSSDK.h>
+#import <AlipaySDK/AlipaySDK.h>
+#import "WXApi.h"
 //pod文件头文件
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
@@ -35,6 +41,7 @@
 #import "RLMObject+Copying.h"//Realm对象拷贝 Realm专用
 #import "UMMobClick/MobClick.h"//友盟统计
 //常用分类category
+#import "Categories.h"
 #import "UIButton+Extension.h"
 #import "UIImage+Extension.h"
 #import "UIImage+scale.h"
@@ -59,5 +66,6 @@
 #import "AutoImageTableViewCell.h"
 #import "AutoImageViewHeightFrameModel.h"
 #import "CustomPageView.h"
+#import "BJNoDataView.h"
 
 #endif /* ZRTPrefixHeader_pch */
