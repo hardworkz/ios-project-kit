@@ -17,6 +17,7 @@
 #import "Macro.h"
 #import "ZRTConfig.h"
 #import "ZRTNotificationConfig.h"
+#import "Categories.h"
 //基类控制器头文件
 #import "ZRTRootViewController.h"
 #import "ZRTRootNavigationController.h"
@@ -40,18 +41,9 @@
 #import "RLMObject+JSON.h"//JSON和对象转换 Realm专用
 #import "RLMObject+Copying.h"//Realm对象拷贝 Realm专用
 #import "UMMobClick/MobClick.h"//友盟统计
-//常用分类category
-#import "Categories.h"
-#import "UIButton+Extension.h"
-#import "UIImage+Extension.h"
-#import "UIImage+scale.h"
-#import "UIView+Extension.h"
-#import "UIView+tap.h"
-#import "NSDate+Category.h"
-#import "UIViewController+AutoBack.h"
-#import "NSString+StringSize.h"
-#import "UINavigationController+Cloudox.h"
+#import "AvoidCrash.h"//对服务器数据的空值进行处理，防止数组，字典，字符串等空值引起的crash
 //自定义类
+#import "ZRT_AvoidCrashTool.h"//容错处理工具类
 #import "HttpService.h"//网络请求工具类
 #import "InterfaceConfig.h"//自定义网络请求baseUrl
 #import "DataCache.h"//数据缓存

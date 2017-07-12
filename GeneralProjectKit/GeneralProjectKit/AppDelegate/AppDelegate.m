@@ -27,10 +27,12 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    //初始化应用窗口
     [self setAppWindows];
-    
+    //初始化根控制器
     [self setRootViewController];
+    //数组，字典，字符串空值处理
+    [self avoidCrash];
     
     return YES;
 }

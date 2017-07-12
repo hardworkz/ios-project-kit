@@ -8,6 +8,30 @@
 #import "UIView+YXAdd.h"
 
 @implementation UIView (YXAdd)
+- (void)setX:(CGFloat)x
+{
+    CGRect frame = self.frame;
+    frame.origin.x = x;
+    self.frame = frame;
+}
+
+- (CGFloat)x
+{
+    return self.frame.origin.x;
+}
+
+- (void)setY:(CGFloat)y
+{
+    CGRect frame = self.frame;
+    frame.origin.y = y;
+    self.frame = frame;
+}
+
+- (CGFloat)y
+{
+    return self.frame.origin.y;
+}
+
 
 - (CGFloat)left {
     return self.frame.origin.x;

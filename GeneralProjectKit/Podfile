@@ -20,4 +20,5 @@ target 'GeneralProjectKit' do
    pod 'UMengUShare/Social/ReducedSina'
    # 加入IDFA获取
    pod 'UMengUShare/Plugin/IDFA'
+   pod 'AvoidCrash'
 end

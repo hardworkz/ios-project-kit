@@ -9,6 +9,8 @@
 
 @interface UIView (YXAdd)
 
+@property (nonatomic) CGFloat x;           // < frame.origin.x
+@property (nonatomic) CGFloat y;           // < frame.origin.y
 @property (nonatomic) CGFloat left;        // < frame.origin.x
 @property (nonatomic) CGFloat top;         // < frame.origin.y
 @property (nonatomic) CGFloat right;       // < frame.origin.x + frame.size.width

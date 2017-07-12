@@ -62,7 +62,8 @@
     }
 }
 //创建用户的数据库观察者
-- (RBQFetchedResultsController*)createUserFetchedResultsController {
+- (RBQFetchedResultsController*)createUserFetchedResultsController
+{
     RLMRealm *rLMRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_filePath]];
     RBQFetchedResultsController *fetchedResultsController = nil;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userNo = %d",_user.userNo];

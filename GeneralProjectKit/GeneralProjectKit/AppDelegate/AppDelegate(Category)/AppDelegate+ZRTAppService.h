@@ -21,5 +21,8 @@
  *  友盟统计
  */
 - (void)registerUmengConfigure;
-
+/**
+ *  防止应用中的数组，字典，等空值引起的crash
+ */
+- (void)avoidCrash;
 @end

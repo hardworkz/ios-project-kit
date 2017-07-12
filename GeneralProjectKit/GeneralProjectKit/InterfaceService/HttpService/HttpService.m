@@ -49,6 +49,8 @@ static HttpService * __singleton__;
     NSMutableURLRequest *request = [_dataSessionManager.requestSerializer requestWithMethod:methodStr URLString:urlStr parameters:parameters error:nil];
     __block NSURLSessionDataTask *task = nil;
     task = [_dataSessionManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        //对服务器返回数据进行容错处理
+        id respObj = [ZRT_AvoidCrashTool replaceNullData:responseObject];
         //结束菊花
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         //判断结果
@@ -58,10 +60,10 @@ static HttpService * __singleton__;
         if(error) {
             err = error;
         } else {//请求没有错
-            NSDictionary *responseObjectDic = [responseObject mj_keyValues];
-            NSInteger resultCode = [responseObjectDic[@"code"] integerValue];
+            NSDictionary *responseObjectDic = [respObj mj_keyValues];
+            NSInteger resultCode = [respObj[@"code"] integerValue];
             if(resultCode == 0) {//0表示成功
-                data = responseObjectDic[@"data"];
+                data = respObj[@"data"];
             } else {
                 err = [[NSError alloc] initWithDomain:responseObjectDic[@"message"] code:resultCode userInfo:nil];
             }

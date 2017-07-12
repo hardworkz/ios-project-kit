@@ -18,4 +18,14 @@
 #import "NSNotificationCenter+YXAdd.h"
 #import "NSTimer+YXAdd.h"
 
+//常用分类category
+#import "UIButton+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIImage+scale.h"
+#import "UIView+tap.h"
+#import "NSDate+Category.h"
+#import "UIViewController+AutoBack.h"
+#import "NSString+StringSize.h"
+#import "UINavigationController+Cloudox.h"
+
 #endif /* Categories_h */

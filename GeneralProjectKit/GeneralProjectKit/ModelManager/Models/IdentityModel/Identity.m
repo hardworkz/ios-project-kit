@@ -16,7 +16,18 @@ MJExtensionCodingImplementation
 {
     self = [super init];
     if (self) {
+        //是否为第一次使用软件
         _firstUseSoft = YES;
+        //初始化获取软件版本号
+        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        _lastSoftVersion = currentVersion;
+        
+        //获取当前登录状态
+        UserManager *usermanager = [UserManager manager];
+        if (usermanager.user.userNo != 0) {
+            _isLogin = NO;
+        }
+        
     }
     return self;
 }

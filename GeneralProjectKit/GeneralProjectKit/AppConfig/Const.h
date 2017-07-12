@@ -15,5 +15,7 @@ extern float const kNavigationBarHeight;    // < 导航栏高度（包括状态�
 extern float const kTabBarHeight;           // < 标签栏高度
 extern float const k5sHeight;               // < iPhone5S屏幕高度
 extern float const k5sWidth;                // < iPhone5S屏幕宽度
+extern float const k6sHeight;               // < iPhone6S屏幕高度
+extern float const k6sWidth;                // < iPhone6S屏幕宽度
 
 #endif

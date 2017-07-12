@@ -15,6 +15,8 @@ float const kNavigationBarHeight = 64.f;
 float const kTabBarHeight = 49.f;
 float const k5sHeight = 568.f;
 float const k5sWidth = 320.f;
+float const k6sHeight = 667.f;
+float const k6sWidth = 375.f;
 
 #endif
 

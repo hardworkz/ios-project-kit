@@ -42,12 +42,6 @@
 #else
 #define RTLog(...)
 #endif
-// < 调试时Log，发布的时不Log
-#ifdef DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-#else
-#define NSLog(FORMAT, ...) nil
-#endif
 
 // 消息通知
 #define RegisterNotify(_name, _selector)                    \
@@ -76,17 +70,21 @@ selector:_selector name:_name object:nil];
 #define Default_General_Image [UIImage imageNamed:@"default_general"]
 //第三方服务的key
 #define UmengAppKey @""//友盟分享appKey
+
 #define ShareQQAppID @""//腾讯appID
 #define ShareQQAppKey @""//腾讯appKey
+
 #define WetChatAppId @""//微信appID
 #define WetChatAppSecret @""//微信appSecret
+
 #define WeiBoAppKey @""//微博appKey
 #define WeiBoAppSecret @""//微博appSecret
+
 #define SMSMobAppKey @""//MobAppKey
 #define SMSMobAppSecret @""
 #define SMSMobAppKeyTest @""//MobAppKey--测试使用
 #define SMSMobAppSecretTest @""
-#define BuglyKey @""
+
 #define UMConfigAppKey @""
 #define UMConfigChannelId @""
 

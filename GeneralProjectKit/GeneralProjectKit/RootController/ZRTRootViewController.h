@@ -21,6 +21,22 @@
 
 @interface ZRTRootViewController : UIViewController
 /**
+ 设置导航栏返回按钮的图片
+
+ @param imageName 返回图片
+ */
+- (void)setBackBarItemWithImage:(NSString *)imageName action:(SEL)action;
+/**
+ pop
+ */
+- (void)back;
+/**
+ dismiss
+
+ @param complete 完成block
+ */
+- (void)dismissComplete:(void(^)())complete;
+/**
  提示弹窗
 
  @param title 文字内容
@@ -65,4 +81,9 @@
  @param array 数组
  */
 - (NSMutableArray *)addObjectFromArray:(NSArray *)array;
+
+/**
+ rootTableView
+ */
+- (UITableView *)tableViewWithFrame:(CGRect)frame style:(UITableViewStyle)style;
 @end

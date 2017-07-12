@@ -10,6 +10,7 @@
 @interface Identity : NSObject
 
 @property (nonatomic, assign) int userNo;//当前登录的用户编号
+@property (nonatomic, assign) BOOL isLogin;//是否为登录状态
 @property (nonatomic, assign) BOOL firstUseSoft;//是不是第一次使用软件
 @property (nonatomic, strong) NSString *lastSoftVersion;//最近一次软件的版本号
 

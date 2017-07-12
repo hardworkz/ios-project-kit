@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AvoidCrash (1.6.7)
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (4.0.9)
   - MJExtension (3.0.13)
@@ -53,6 +54,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - AvoidCrash
   - FDFullscreenPopGesture (~> 1.1)
   - IQKeyboardManager (~> 4.0.9)
   - MJExtension (~> 3.0.10)
@@ -69,6 +71,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AvoidCrash: 74136074de17bde312719c0b44fa0c9b26a4b652
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -81,6 +84,6 @@ SPEC CHECKSUMS:
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
 
-PODFILE CHECKSUM: e54dd25b9eb752cd0f82e565d0d72ea7a1d9344b
+PODFILE CHECKSUM: 3cf13da039e6b1b8bb45a661693cf2a12cd02590
 
 COCOAPODS: 1.0.1

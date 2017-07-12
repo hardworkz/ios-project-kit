@@ -66,4 +66,8 @@
     [manager setKeyboardDistanceFromTextField:0];
 
 }
+- (void)avoidCrash
+{
+    [AvoidCrash becomeEffective];
+}
 @end

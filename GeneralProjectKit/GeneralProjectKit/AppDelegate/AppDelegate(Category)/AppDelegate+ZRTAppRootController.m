@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate+ZRTAppRootController.h"
+#import "ZRT_MainViewController.h"
 
 @implementation AppDelegate (ZRTAppRootController)
 - (void)setAppWindows
@@ -18,12 +19,12 @@
 }
 - (void)setRootViewController
 {
-    //获取当前应用版本和上一个应用版本
-    NSString *versionKey = (__bridge NSString *)kCFBundleVersionKey;
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:versionKey];
+    //获取当前应用版本和上一个应用版本进行比较，如果不相同则为进行过更新
+    IdentityManager *identityManager = [IdentityManager manager];
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
-    if ([lastVersion isEqualToString:currentVersion])
-    {//不是第一次安装
+    if ([identityManager.identity.lastSoftVersion isEqualToString:currentVersion])
+    {
+        //不是第一次安装
         [self setRoot];
     }
     else
@@ -32,6 +33,9 @@
         UIViewController *emptyView = [[ZRTRootViewController alloc ] init];
         self.window.rootViewController = emptyView;
         [self createLoadingScrollView];
+        
+        //保存当前版本号
+        identityManager.identity.lastSoftVersion = currentVersion;
     }
 }
 - (void)setTabbarController
@@ -44,7 +48,7 @@
 }
 - (void)setRoot
 {
-    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:[ZRT_MainViewController new]];
     navc.navigationBar.barTintColor = Main_Color;
     
     navc.navigationBar.shadowImage = [[UIImage alloc] init];

@@ -9,12 +9,6 @@
 #import "ZRTRootViewController.h"
 #import <UShareUI/UShareUI.h>
 
-@interface ZRTRootViewController ()
-/**
- *  持有模型对象
- */
-@property (strong,nonatomic)Model *model;
-@end
 @implementation Model
 
 /**
@@ -29,12 +23,50 @@
 
 @end
 
+@interface ZRTRootViewController ()
+/**
+ *  持有模型对象
+ */
+@property (strong,nonatomic)Model *model;
+
+@end
+
 static void *dataArrayContext = &dataArrayContext;
 
 @implementation ZRTRootViewController
-
+#pragma mark - tableView
+- (UITableView *)tableViewWithFrame:(CGRect)frame style:(UITableViewStyle)style
+{
+    UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
+    return tableView;
+}
+#pragma mark - 返回按钮
+- (void)setBackBarItemWithImage:(NSString *)imageName action:(SEL)action
+{
+    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    leftBtn.imageView.contentMode = UIViewContentModeCenter;
+    leftBtn.accessibilityLabel = @"返回";
+    leftBtn.bounds = CGRectMake(0, 0, 44, 44);
+    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    [leftBtn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = back;
+}
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)dismissComplete:(void(^)())complete
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (complete) {
+            complete();
+        }
+    }];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     _model = [Model new];
     
