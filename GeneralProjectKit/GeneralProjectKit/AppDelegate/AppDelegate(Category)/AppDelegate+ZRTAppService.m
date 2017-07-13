@@ -68,6 +68,14 @@
 }
 - (void)avoidCrash
 {
+    //全局启动崩溃预防
     [AvoidCrash becomeEffective];
+    //监听崩溃的信息通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
+}
+- (void)dealwithCrashMessage:(NSNotification *)note {
+    //注意:所有的信息都在userInfo中
+    //你可以在这里收集相应的崩溃信息进行相应的处理(比如传到自己服务器)
+    NSLog(@"%@",note.userInfo);
 }
 @end
