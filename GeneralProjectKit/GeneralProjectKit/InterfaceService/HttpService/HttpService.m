@@ -48,32 +48,35 @@ static HttpService * __singleton__;
     NSString *methodStr = [self stringWithMethod:method];
     NSMutableURLRequest *request = [_dataSessionManager.requestSerializer requestWithMethod:methodStr URLString:urlStr parameters:parameters error:nil];
     __block NSURLSessionDataTask *task = nil;
-    task = [_dataSessionManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        //对服务器返回数据进行容错处理
-        id respObj = [ZRT_AvoidCrashTool replaceNullData:responseObject];
-        //结束菊花
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        //判断结果
-        NSError *err = nil;
-        id data = nil;
-        //如果是请求时的错误
-        if(error) {
-            err = error;
-        } else {//请求没有错
-            NSDictionary *responseObjectDic = [respObj mj_keyValues];
-            NSInteger resultCode = [respObj[@"code"] integerValue];
-            if(resultCode == 0) {//0表示成功
-                data = respObj[@"data"];
-            } else {
-                err = [[NSError alloc] initWithDomain:responseObjectDic[@"message"] code:resultCode userInfo:nil];
-            }
-        }
-        //主线程执行回调
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionHandler(data, err);
-        });
-    }];
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //异步执行
+        task = [_dataSessionManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+            //对服务器返回数据进行容错处理
+            id respObj = [ZRT_AvoidCrashTool replaceNullData:responseObject];
+            //结束菊花
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            //判断结果
+            NSError *err = nil;
+            id data = nil;
+            //如果是请求时的错误
+            if(error) {
+                err = error;
+            } else {//请求没有错
+                NSDictionary *responseObjectDic = [respObj mj_keyValues];
+                NSInteger resultCode = [respObj[@"code"] integerValue];
+                if(resultCode == 0) {//0表示成功
+                    data = respObj[@"data"];
+                } else {
+                    err = [[NSError alloc] initWithDomain:responseObjectDic[@"message"] code:resultCode userInfo:nil];
+                }
+            }
+            //主线程执行回调
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(data, err);
+            });
+        }];
+    });
     //发起请求任务
     [task resume];
     return task;

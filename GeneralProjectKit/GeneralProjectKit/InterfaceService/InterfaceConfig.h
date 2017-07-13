@@ -11,5 +11,10 @@
 extern NSString *const KBSSDKAPIURL;
 
 @interface InterfaceConfig : NSObject
+/**
+ 登录接口
+ */
+@property (strong, nonatomic) NSString *LoginAPI;
 
+extern NSString *const KBSSDKAPIURLs;
 @end

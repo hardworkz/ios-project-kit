@@ -54,9 +54,9 @@
     //创建数据库
     RLMRealm *rlmRealm = [RLMRealm realmWithURL:[NSURL URLWithString:_filePath]];
     //得到/创建用户数据
-    RLMResults *users = [User allObjectsInRealm:rlmRealm];
+    RLMResults<User *> *users = [User allObjectsInRealm:rlmRealm];
     if(users.count) {
-        _user = [users objectAtIndex:0];
+        _user = users.firstObject;
     } else {
         _user = [User new];
     }

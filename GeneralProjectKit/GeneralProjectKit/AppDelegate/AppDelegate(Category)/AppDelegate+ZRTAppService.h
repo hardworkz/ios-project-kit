@@ -25,4 +25,11 @@
  *  防止应用中的数组，字典，等空值引起的crash
  */
 - (void)avoidCrash;
+
+/**
+ 修改数据模型后调用，数据库版本迭代增加
+
+ @param schemaVersion 数据库版本
+ */
+- (void)realmDataStructureChangesWithVersion:(uint64_t)schemaVersion;
 @end

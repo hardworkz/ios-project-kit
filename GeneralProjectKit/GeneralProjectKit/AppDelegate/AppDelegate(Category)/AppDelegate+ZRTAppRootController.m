@@ -21,6 +21,7 @@
 {
     //获取当前应用版本和上一个应用版本进行比较，如果不相同则为进行过更新
     IdentityManager *identityManager = [IdentityManager manager];
+    [identityManager readAuthorizeData];
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
     if ([identityManager.identity.lastSoftVersion isEqualToString:currentVersion])
     {
@@ -36,6 +37,8 @@
         
         //保存当前版本号
         identityManager.identity.lastSoftVersion = currentVersion;
+        identityManager.identity.realmDataVersion += 0.1;
+        [identityManager saveAuthorizeData];
     }
 }
 - (void)setTabbarController

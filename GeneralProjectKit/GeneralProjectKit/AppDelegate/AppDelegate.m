@@ -33,7 +33,8 @@
     [self setRootViewController];
     //数组，字典，字符串空值处理
     [self avoidCrash];
-    
+    //数据库版本设置，当修改realm数据模型时迭代版本
+    [self realmDataStructureChangesWithVersion:[IdentityManager manager].identity.realmDataVersion];
     return YES;
 }
 

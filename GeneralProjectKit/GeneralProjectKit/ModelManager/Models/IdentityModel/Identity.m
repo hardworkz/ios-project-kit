@@ -27,7 +27,7 @@ MJExtensionCodingImplementation
         if (usermanager.user.userNo != 0) {
             _isLogin = NO;
         }
-        
+        _realmDataVersion = 0;
     }
     return self;
 }

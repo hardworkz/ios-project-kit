@@ -10,11 +10,13 @@
 
 @implementation AppDelegate (ZRTAppService)
 
+#pragma mark - Mob
 - (void)registerMob
 {
     [SMSSDK registerApp:SMSMobAppKeyTest
              withSecret:SMSMobAppSecretTest];
 }
+#pragma mark - UMengShare
 - (void)registerUmeng
 {
     /* 设置友盟appkey */
@@ -47,6 +49,7 @@
      */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WeiBoAppKey  appSecret:WeiBoAppSecret redirectURL:@""];
 }
+#pragma mark - UmengConfigure
 - (void)registerUmengConfigure
 {
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
@@ -55,6 +58,7 @@
     UMConfigInstance.channelId = UMConfigChannelId;
     [MobClick startWithConfigure:UMConfigInstance];
 }
+#pragma mark - IQKeyboardManager
 - (void)setIQKeyboardManager
 {
     //自动处理键盘事件的第三方库
@@ -66,6 +70,7 @@
     [manager setKeyboardDistanceFromTextField:0];
 
 }
+#pragma mark - avoidCrash
 - (void)avoidCrash
 {
     //全局启动崩溃预防
@@ -77,5 +82,33 @@
     //注意:所有的信息都在userInfo中
     //你可以在这里收集相应的崩溃信息进行相应的处理(比如传到自己服务器)
     NSLog(@"%@",note.userInfo);
+}
+#pragma mark - realm
+- (void)realmDataStructureChangesWithVersion:(uint64_t)schemaVersion
+{
+    // 在 [AppDelegate didFinishLaunchingWithOptions:] 中进行配置
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    
+    // 设置新的架构版本。这个版本号必须高于之前所用的版本号（如果您之前从未设置过架构版本，那么这个版本号设置为 0）
+    config.schemaVersion = schemaVersion;
+    
+    // 设置闭包，这个闭包将会在打开低于上面所设置版本号的 Realm 数据库的时候被自动调用
+    config.migrationBlock = ^(RLMMigration *migration, uint64_t oldSchemaVersion) {
+        // 目前我们还未进行数据迁移，因此 oldSchemaVersion == 0
+        if (oldSchemaVersion < 1) {
+            // 什么都不要做！Realm 会自行检测新增和需要移除的属性，然后自动更新硬盘上的数据库架构
+        }
+    };
+    
+    // 告诉 Realm 为默认的 Realm 数据库使用这个新的配置对象
+    [RLMRealmConfiguration setDefaultConfiguration:config];
+    
+    // 现在我们已经告诉了 Realm 如何处理架构的变化，打开文件之后将会自动执行迁移
+    [RLMRealm defaultRealm];
+    
+//    作者：PerhapYs
+//    链接：http://www.jianshu.com/p/096bec929f2a
+//    來源：简书
+//    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 }
 @end

@@ -54,7 +54,6 @@
     if ([newStr isKindOfClass:[NSNull class]] ||
         newStr == nil ||
         [newStr isEqualToString:@"(null)"]||
-        [newStr isEqualToString:@""] ||
         [newStr isEqualToString:@"null"] ||
         [newStr isEqualToString:@"<null>"] ||
         [newStr isEqual:[NSNull null]]) {
