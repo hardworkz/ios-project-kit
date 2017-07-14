@@ -19,7 +19,7 @@
 #pragma mark -- User
 //更新用户数据
 - (void)updateUser:(User*)user;
-//通过用户guid加载用户
+//通过用户guid加载用户，必须最先调用该方法获取filePath
 - (void)loadUserWithNo:(int)userNo;
 //创建用户的数据库观察者
 - (RBQFetchedResultsController*)createUserFetchedResultsController;

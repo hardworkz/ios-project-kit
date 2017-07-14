@@ -17,6 +17,7 @@
 		69864CAC1F1477C400335262 /* no_data@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69864CA81F1477C400335262 /* no_data@2x.png */; };
 		69864CAD1F1477C400335262 /* no_data@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69864CA91F1477C400335262 /* no_data@3x.png */; };
 		69864CE11F14BE3700335262 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 69864CDF1F14BE3700335262 /* Const.m */; };
+		698DFA791F18593F006D99AC /* ZRT_RealmDataCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 698DFA781F18593F006D99AC /* ZRT_RealmDataCacheTool.m */; };
 		699D04DA1F15C77E00D8D9EB /* AppDelegate+ZRTAppLifeCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D04D51F15C77E00D8D9EB /* AppDelegate+ZRTAppLifeCircle.m */; };
 		699D04DB1F15C77E00D8D9EB /* AppDelegate+ZRTAppRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D04D71F15C77E00D8D9EB /* AppDelegate+ZRTAppRootController.m */; };
 		699D04DC1F15C77E00D8D9EB /* AppDelegate+ZRTAppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D04D91F15C77E00D8D9EB /* AppDelegate+ZRTAppService.m */; };
@@ -223,6 +224,8 @@
 		69864CDE1F14BE3700335262 /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		69864CDF1F14BE3700335262 /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		69864CE01F14BE3700335262 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		698DFA771F18593F006D99AC /* ZRT_RealmDataCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRT_RealmDataCacheTool.h; sourceTree = "<group>"; };
+		698DFA781F18593F006D99AC /* ZRT_RealmDataCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRT_RealmDataCacheTool.m; sourceTree = "<group>"; };
 		699D04D41F15C77E00D8D9EB /* AppDelegate+ZRTAppLifeCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ZRTAppLifeCircle.h"; sourceTree = "<group>"; };
 		699D04D51F15C77E00D8D9EB /* AppDelegate+ZRTAppLifeCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ZRTAppLifeCircle.m"; sourceTree = "<group>"; };
 		699D04D61F15C77E00D8D9EB /* AppDelegate+ZRTAppRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ZRTAppRootController.h"; sourceTree = "<group>"; };
@@ -1546,6 +1549,8 @@
 			children = (
 				69F740781F1626A80071E7FD /* ZRT_AvoidCrashTool.h */,
 				69F740791F1626A80071E7FD /* ZRT_AvoidCrashTool.m */,
+				698DFA771F18593F006D99AC /* ZRT_RealmDataCacheTool.h */,
+				698DFA781F18593F006D99AC /* ZRT_RealmDataCacheTool.m */,
 			);
 			path = AppTool;
 			sourceTree = "<group>";
@@ -1811,6 +1816,7 @@
 				69AF4F201F136BF90097893F /* RACSerialDisposable.m in Sources */,
 				69AF4F2E1F136BF90097893F /* RACTupleSequence.m in Sources */,
 				699D04DB1F15C77E00D8D9EB /* AppDelegate+ZRTAppRootController.m in Sources */,
+				698DFA791F18593F006D99AC /* ZRT_RealmDataCacheTool.m in Sources */,
 				69AF4F061F136BF90097893F /* RACCompoundDisposableProvider.d in Sources */,
 				69AF4CEF1F1356BC0097893F /* User.m in Sources */,
 				69AF4F101F136BF90097893F /* RACEvent.m in Sources */,

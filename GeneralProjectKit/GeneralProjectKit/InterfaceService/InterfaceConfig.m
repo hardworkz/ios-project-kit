@@ -8,7 +8,7 @@
 
 #import "InterfaceConfig.h"
 //测试
-NSString* const KBSSDKAPIURL = @"http://test.dashun.applinzi.com/";
+NSString* const KBASE_API_URL = @"http://test.dashun.applinzi.com/";
 //正式
 //NSString* const KBSSDKAPIURL = @"http://dashun.applinzi.com/";
 

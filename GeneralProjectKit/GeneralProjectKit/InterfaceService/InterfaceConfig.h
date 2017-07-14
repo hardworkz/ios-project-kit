@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const KBSSDKAPIURL;
+extern NSString *const KBASE_API_URL;
 
 @interface InterfaceConfig : NSObject
 /**
@@ -16,5 +16,4 @@ extern NSString *const KBSSDKAPIURL;
  */
 @property (strong, nonatomic) NSString *LoginAPI;
 
-extern NSString *const KBSSDKAPIURLs;
 @end

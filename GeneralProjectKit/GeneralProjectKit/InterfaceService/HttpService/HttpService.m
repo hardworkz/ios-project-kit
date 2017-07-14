@@ -107,7 +107,7 @@ static HttpService * __singleton__;
 
 - (void)initManagers {
     //普通数据请求
-    _dataSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:KBSSDKAPIURL]];
+    _dataSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:KBASE_API_URL]];
     [_dataSessionManager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [_dataSessionManager setResponseSerializer:[AFJSONResponseSerializer serializer]];
 }
